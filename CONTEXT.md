@@ -28,6 +28,18 @@ _Avoid_: Backend project state
 The browser-local runtime boundary that turns Pad triggers into playback commands, readiness state, choke-group stops, priority ordering, and visible playback state.
 _Avoid_: Player, backend playback
 
+**Starter Project**:
+An importable, remixable Project intended to help a performer reach a playable setup quickly.
+_Avoid_: Template, demo project
+
+**Controller Profile**:
+A reusable local user asset describing input mappings that can be applied across Projects.
+_Avoid_: Project mapping, device preset
+
+**Show Package**:
+An exportable bundle containing Project structure and eligible local Media for moving a performance setup between devices.
+_Avoid_: Cloud backup, hosted project
+
 ## Relationships
 
 - A **Project** contains multiple **Pads**.
@@ -35,6 +47,9 @@ _Avoid_: Player, backend playback
 - A **Media Source** resolves to **Media** before playback, thumbnailing, or persistence.
 - The **Playback Engine** interprets **Pad** triggers and coordinates playback through Player adapters.
 - A **Share Preview** may describe a **Project**, but it does not persist Project or Media data outside the browser.
+- A **Starter Project** becomes a local **Project** when imported or remixed.
+- A **Controller Profile** may be applied to many **Projects**, but it is not owned by a single Project.
+- A **Show Package** may include eligible local **Media**, while provider-backed **Media Sources** remain references.
 
 ## Example dialogue
 
