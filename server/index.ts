@@ -1,7 +1,7 @@
 import { createReadStream } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
-import { extname, join, normalize, resolve } from 'node:path';
+import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { getPreviewMetadata, PreviewMetadata } from '@/page/previewMetadata';
@@ -72,7 +72,7 @@ const getStaticPath = (pathname: string): string | null => {
   const normalized = normalize(decoded).replace(/^(\.\.(\/|\\|$))+/, '');
   const target = resolve(distDir, normalized.slice(1));
 
-  if (!target.startsWith(distDir)) {
+  if (!target.startsWith(distDir + sep)) {
     return null;
   }
 

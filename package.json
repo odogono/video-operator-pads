@@ -40,7 +40,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
-    "react-router": "^7.15.1"
+    "react-router": "^7.18.4"
   },
   "devDependencies": {
     "@babel/runtime": "^7.26.9",
